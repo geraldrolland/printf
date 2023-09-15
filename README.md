@@ -1,1 +1,1 @@
-Onyeka Gerald Ujowundu and Ayobami Adewumi printf project
+Onyeka Ujowundu and Ayobami Adewumi printf project
