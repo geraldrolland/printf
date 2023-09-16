@@ -1,0 +1,34 @@
+#include <unistd.h>
+#include <unistd.h>
+#include "main.h"
+int write_binary(int num)
+{
+	char str[400];
+	char *ret = print_binary(num, str, 0);
+	int i = _strlen(ret);
+	char ch;
+
+	i--;
+	for (; i >= 0; i--)
+	{
+		ch = ret[i];
+		write(1, &ch, 1);
+	}
+	return (_strlen(ret));
+}
+char *print_binary(int num, char *ptr, int i)
+{
+	int remainder, res;
+
+	remainder = num % 2;
+	ptr[i] = remainder + '0';
+	res = (num - remainder) / 2;
+	if (res == 1)
+	{
+		i++;
+		ptr[i] = res + '0';
+		ptr[i + 1] = '\0';
+		return (ptr);
+	}
+	return (print_binary(res, ptr, i + 1));
+}
