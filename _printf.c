@@ -58,6 +58,11 @@ int _printf(const char *format, ...)
 	va_end(list);
 	return (format_len);
 }
+/**
+ * _strlen - calculate the length of the string
+ * @str: a string in an array of characters
+ * Return: the lenght of the string
+*/
 int _strlen(const char *str)
 {
 	int i;
@@ -69,6 +74,11 @@ int _strlen(const char *str)
 	}
 	return (size);
 }
+/**
+ * write_out - write out the numbers of the output
+ * @str: a character of array in the string
+ * Return: numbers of write out
+*/
 void write_out(const char *str)
 {
 	int i;

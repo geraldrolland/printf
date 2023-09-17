@@ -1,6 +1,11 @@
 #include <unistd.h>
 #include <unistd.h>
 #include "main.h"
+/**
+ * Write_binary - create binary numbers to the output
+ * @num: the parameter of the integer
+ * Return: integer 
+ */
 int write_binary(int num)
 {
 	char str[400];
@@ -16,6 +21,13 @@ int write_binary(int num)
 	}
 	return (_strlen(ret));
 }
+/**
+ * Print_binary - print binanry numbers to the output
+ * @num: integer variable
+ * @ptr: pointer to a string
+ * @i: iterator
+ * Return: return ptr
+ */
 char *print_binary(int num, char *ptr, int i)
 {
 	int remainder, res;

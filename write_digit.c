@@ -1,5 +1,10 @@
 #include <unistd.h>
 #include "main.h"
+/**
+ * write_digit - write all characters in digits
+ * @num: the numbers of all the characters in string
+ * Return: all written digits 
+ */
 void write_digit(int num)
 {
 	int count = count_digit(num, 0);
@@ -27,7 +32,13 @@ void write_digit(int num)
 		}
 	}
 }
-
+/**
+ * insert_digits - insert all digits in the string of characters
+ * @num: the parameter of the characters
+ * @str: string of the characters
+ * @i: index at which to insert digits
+ * Return: character
+ */ 
 char *insert_digit(int num, char *str, int i)
 {
 	int remainder;
@@ -56,6 +67,12 @@ char *insert_digit(int num, char *str, int i)
 		return (str);
 	}
 }
+/**
+ * count_digit - the numbers of digits to be counted in the character
+ * @num: the parameter of the integer
+ * @count: the number of occurence of an element in a given range
+ * Return: the numbers of  integer
+ */ 
 int count_digit(int num, int count)
 {
 	int remainder, res;
