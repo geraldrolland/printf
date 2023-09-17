@@ -1,5 +1,5 @@
 #include <unistd.h>
-#include <unistd.h>
+#include <stdlib.h>
 #include "main.h"
 /**
  * write_binary - create binary numbers to the output
@@ -8,23 +8,32 @@
  */
 int write_binary(int num)
 {
-	char str[400];
-	char *ret = print_binary(num, str, 0);
-	int i = _strlen(ret);
+	char *ret;
+	int i;
+	int size;
 	char ch;
+	char *str = malloc(400);
 
 	if (num < 0)
 	{
 		write(1, "b", 1);
 		return (1);
 	}
+	if (str == NULL)
+	{
+		return (0);
+	}
+	ret = print_binary(num, str, 0);
+	i = _strlen(ret);
+	size = i;
 	i--;
 	for (; i >= 0; i--)
 	{
 		ch = ret[i];
 		write(1, &ch, 1);
 	}
-	return (_strlen(ret));
+	free(ret);
+	return (size);
 }
 /**
  * print_binary - print binanry numbers to the output
