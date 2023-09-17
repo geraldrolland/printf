@@ -2,9 +2,9 @@
 #include <unistd.h>
 #include "main.h"
 /**
- * Write_binary - create binary numbers to the output
+ * write_binary - create binary numbers to the output
  * @num: the parameter of the integer
- * Return: integer 
+ * Return: integer
  */
 int write_binary(int num)
 {
@@ -22,7 +22,7 @@ int write_binary(int num)
 	return (_strlen(ret));
 }
 /**
- * Print_binary - print binanry numbers to the output
+ * print_binary - print binanry numbers to the output
  * @num: integer variable
  * @ptr: pointer to a string
  * @i: iterator

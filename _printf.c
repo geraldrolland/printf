@@ -1,9 +1,9 @@
 #include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
-/** _printf - print the numbers to the output
+/**
+ *_printf - print the numbers to the output
  * @format: print the formatted numbers of the parameters in the integer
- * @str: print the string in characters
  * Return: integer
  */
 int _printf(const char *format, ...);
