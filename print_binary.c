@@ -13,6 +13,11 @@ int write_binary(int num)
 	int i = _strlen(ret);
 	char ch;
 
+	if (num < 0)
+	{
+		write(1, "b", 1);
+		return (1);
+	}
 	i--;
 	for (; i >= 0; i--)
 	{
