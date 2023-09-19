@@ -17,7 +17,7 @@ int write_binary(int num)
 	if (num < 0)
 	{
 		write(1, "b", 1);
-		return (1);
+		return (-1);
 	}
 	if (str == NULL)
 	{
@@ -32,7 +32,7 @@ int write_binary(int num)
 		ch = ret[i];
 		write(1, &ch, 1);
 	}
-	free(ret);
+	free(str);
 	return (size);
 }
 /**

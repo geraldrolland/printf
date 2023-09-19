@@ -7,13 +7,14 @@
  * Return: integer
  */
 int _printf(const char *format, ...);
-int _strlen(const char *str);
+int get_hex_oct(int count, char ch, unsigned int var);
 int _printf(const char *format, ...)
 {
 	va_list list;
 	char ch, var;
 	const char *string;
 	int format_len = 0, int_num, bin;
+	unsigned int pass;
 
 	va_start(list, format);
 	while (format != NULL && *format != '\0')
@@ -25,7 +26,7 @@ int _printf(const char *format, ...)
 			{
 				string = va_arg(list, const char *);
 				if (string == NULL)
-					string = "(nuil)";
+					string = "(nil)";
 				write_out(string);
 				format_len += _strlen(string);
 			}
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 				write(1, &ch, 1);
 				format_len++;
 			}
-			else if (*format == 'd' || *format == 'i')
+			else if (*format == 'd' || *format == 'i' || *format == 'u')
 			{
 				int_num = va_arg(list, int);
 				format_len += count_digit(int_num, 0);
@@ -46,10 +47,21 @@ int _printf(const char *format, ...)
 				write(1, "%", 1);
 				format_len++;
 			}
+			else if (*format == 'u')
+			{
+				int_num = va_arg(list, int);
+				format_len += count_digit(int_num, 0);
+				write_digit(int_num);
+			}
 			else if (*format == 'b')
 			{
 				bin = va_arg(list, int);
 				format_len += write_binary(bin);
+			}
+			else if (*format == 'o' || *format == 'x' || *format == 'X')
+			{
+				pass = va_arg(list, unsigned int);
+				format_len += get_hex_oct(format_len, *format, pass);
 			}
 		}
 		else
@@ -94,4 +106,19 @@ void write_out(const char *str)
 		ch = str[i];
 		write(1, &ch, 1);
 	}
+}
+int get_hex_oct(int count, char ch, unsigned int var)
+{
+	if (ch == 'X')
+	{
+		count = count + write_hex(var, 'X');
+		return (count);
+	}
+	if (ch == 'x')
+	{
+		count = count + write_hex(var, 'x');
+		return (count);
+	}
+	count = count + write_oct(var);
+	return (count);
 }

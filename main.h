@@ -10,4 +10,9 @@ char *insert_digit(int num, char *str, int i);
 void write_digit(int num);
 int count_digit(int num, int count);
 void write_digit(int num);
+int write_hex(unsigned int num, char ch);
+char *insert_hex(int num, char *str, int i);
+int _str_len(char *str);
+int write_oct(unsigned int num);
+char *insert_oct(unsigned int num, char *str, int i);
 #endif
