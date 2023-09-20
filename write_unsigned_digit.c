@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <limits.h>
-#include <stdio.h>
 #include "main.h"
 /**
  * write_digit - write all characters in digits
@@ -10,7 +9,7 @@
 void write_unsigned_digit(unsigned int num)
 {
 	int count = count_unsigned_digit(num, 0);
-	char num_string[400];
+	char num_string[200];
 	char *ptr = insert_unsigned_digit(num, num_string, 0);
 	char ch;
 
@@ -55,7 +54,7 @@ char *insert_unsigned_digit(unsigned int num, char *str, int i)
 	str[i] = remainder + '0';
 	if (num >= 10)
 	{
-		insert_unsigned_digit(num / 10, str, i + 1);
+		return (insert_unsigned_digit(num / 10, str, i + 1));
 	}
 	str[i + 1] = '\0';
 	return (str);
