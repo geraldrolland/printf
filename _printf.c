@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include "main.h"
 /**
- *_printf - print the numbers to the output
+ * _printf - print the numbers to the output
  * @format: print the formatted numbers of the parameters in the integer
  * Return: integer
  */

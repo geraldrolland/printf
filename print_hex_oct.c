@@ -1,8 +1,20 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include "main.h"
+/**
+ * call_back - call back numbers of characters to the output
+ * @str: strings of a character
+ * @i: integer
+ * @res: declaration of an object with the name res of the type struct response
+ * Return: return all integers and character
+ */
 char *call_back(char *str, int i, int res);
-
+/**
+ * write_hex - a hexadecimal number is represented by preceding number
+ * @num: integer variable
+ * @var: character of variable
+ * Return: return all integers and character
+ */
 int write_hex(unsigned int num, char var)
 {
 	char *str = malloc(3000);
@@ -37,6 +49,13 @@ int write_hex(unsigned int num, char var)
 	free(ptr);
 	return (len);
 }
+/**
+ * insert_hex - insert all hexadecimal characters
+ * @num: the parameter of the integer
+ * @str: the string of each character
+ * @i: iterator
+ * Return: return all character
+ */
 char *insert_hex(int num, char *str, int i)
 {
 	int remainder, res;
@@ -83,7 +102,12 @@ char *insert_hex(int num, char *str, int i)
 		return (call_back(str, i, res));
 	return (insert_hex(res, str, i));
 }
-int _str_len(char *str)
+/**
+ * _strlen - takes a string as an argument and return its length
+ * @str: string of all character
+ * Return: return all strings
+ */
+int _strlen(char *str)
 {
 	int i;
 	int size = 0;
@@ -94,6 +118,11 @@ int _str_len(char *str)
 	}
 	return (size);
 }
+/**
+ * write_oct - write the function numbers with arguments and with retun value
+ * @num: integer variable
+ * Return: integer
+ */
 int write_oct(unsigned int num)
 {
 	char *str = malloc(3000);
@@ -111,6 +140,13 @@ int write_oct(unsigned int num)
 	free(ptr);
 	return (len);
 }
+/**
+ * insert_oct - insert the function numbers with arguments in its return value
+ * @num: integer variable
+ * @str: string of a character
+ * @i: iterator
+ * Return: all number in the characters
+ */
 char *insert_oct(unsigned int num, char *str, int i)
 {
 	int remainder, res;
@@ -128,6 +164,13 @@ char *insert_oct(unsigned int num, char *str, int i)
 	str[i] = '\0';
 	return (str);
 }
+/**
+ * call_back - call back the numbers of characters
+ * @str: string of a character
+ * @i: iterator
+ * @res: the contraction of all results of charater
+ * Return: return all character in string
+ */
 char *call_back(char *str, int i, int res)
 {
 	if (res == 0)
