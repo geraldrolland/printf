@@ -116,6 +116,13 @@ void write_out(const char *str)
 		write(1, &ch, 1);
 	}
 }
+/**
+ * get_hex_oct - print the value of decimal in integer
+ * @count: return the number of element in the character
+ * @ch: pointer to array of variables
+ * @var: memory storage
+ * Return: integer
+ */
 int get_hex_oct(int count, char ch, unsigned int var)
 {
 	if (ch == 'X')
