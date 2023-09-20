@@ -15,6 +15,7 @@ int write_binary(unsigned int num)
 	int size;
 	char ch;
 	char *str = malloc(400);
+
 	if (str == NULL)
 	{
 		return (0);

@@ -1,17 +1,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <stdio.h>
-/*#include "main.h"*/
-/*int _str_len(char *str);*/
-void write_unsigned_digit(unsigned int num);
-char *insert_unsigned_digit(unsigned int num, char *str, int i);
-int count_unsigned_digit(unsigned int num, int count);
-int main(void)
-{
-	unsigned int ui = INT_MAX;
-	write_unsigned_digit(ui);
-	printf("\n");
-}
+#include "main.h"
 /**
  * write_digit - write all characters in digits
  * @num: the numbers of all the characters in string

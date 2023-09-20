@@ -2,24 +2,12 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "main.h"
-<<<<<<< HEAD
-char *call_back(char *str, int i, unsigned int res);
-=======
-/**
- * call_back - call back numbers of characters to the output
- * @str: strings of a character
- * @i: integer
- * @res: declaration of an object with the name res of the type struct response
- * Return: return all integers and character
- */
-char *call_back(char *str, int i, int res);
 /**
  * write_hex - a hexadecimal number is represented by preceding number
  * @num: integer variable
  * @var: character of variable
  * Return: return all integers and character
  */
->>>>>>> c47326837d6ebcb3e47b25671f599e158e9591d5
 int write_hex(unsigned int num, char var)
 {
 	char *str = malloc(3000);
@@ -54,9 +42,6 @@ int write_hex(unsigned int num, char var)
 	free(ptr);
 	return (len);
 }
-<<<<<<< HEAD
-char *insert_hex(unsigned int num, char *str, int i)
-=======
 /**
  * insert_hex - insert all hexadecimal characters
  * @num: the parameter of the integer
@@ -64,42 +49,16 @@ char *insert_hex(unsigned int num, char *str, int i)
  * @i: iterator
  * Return: return all character
  */
-char *insert_hex(int num, char *str, int i)
->>>>>>> c47326837d6ebcb3e47b25671f599e158e9591d5
+char *insert_hex(unsigned int num, char *str, int i)
 {
 	unsigned int remainder, res;
 
 	remainder = num % 16;
 	res = num - remainder;
 	res = res / 16;
-	if (remainder == 10)
+	if (remainder >= 10 && remainder < 16)
 	{
-		str[i] = 'a';
-		i++;
-	}
-	if (remainder == 11)
-	{
-		str[i] = 'b';
-		i++;
-	}
-	if (remainder == 12)
-	{
-		str[i] = 'c';
-		i++;
-	}
-	if (remainder == 13)
-	{
-		str[i] = 'd';
-		i++;
-	}
-	if (remainder == 14)
-	{
-		str[i] = 'e';
-		i++;
-	}
-	if (remainder == 15)
-	{
-		str[i] = 'f';
+		str[i] = 'a' + (remainder - 10);
 		i++;
 	}
 	if (remainder < 10)
@@ -112,11 +71,11 @@ char *insert_hex(int num, char *str, int i)
 	return (insert_hex(res, str, i));
 }
 /**
- * _strlen - takes a string as an argument and return its length
+ * _str_len - takes a string as an argument and return its length
  * @str: string of all character
  * Return: return all strings
  */
-int _strlen(char *str)
+int _str_len(char *str)
 {
 	int i;
 	int size = 0;
@@ -132,49 +91,29 @@ int _strlen(char *str)
  * @num: integer variable
  * Return: integer
  */
-int write_oct(unsigned int num)
-{
-	char *str = malloc(3000);
-	char *ptr = insert_oct(num, str, 0);
-	int size = _str_len(ptr);
-	int len = size;
-	char ch;
-
-	size--;
-	for (; size >= 0; size--)
-	{
-		ch = ptr[size];
-		write(1, &ch, 1);
-	}
-	free(ptr);
-	return (len);
-}
-/**
- * insert_oct - insert the function numbers with arguments in its return value
- * @num: integer variable
- * @str: string of a character
- * @i: iterator
- * Return: all number in the characters
- */
-char *insert_oct(unsigned int num, char *str, int i)
+int write_oct(unsigned int num, int count)
 {
 	unsigned int remainder, res;
+	char var, ch;
 
 	remainder = num % 8;
 	res = num - remainder;
+	count++;
+	ch = remainder + '0';
 	res = res / 8;
-	str[i] = remainder + '0';
-	i++;
-	if (res > 0)
+	if (res < 8)
 	{
-		return (insert_oct(res, str, i));
+		var = res + '0';
+		write(1, &var, 1);
+		write(1, &ch, 1);
+		count++;
+		return (count);
 	}
-	str[i] = '\0';
-	return (str);
+	num = res;
+	count = (write_oct(num, count));
+	write(1, &ch, 1);
+	return (count);
 }
-<<<<<<< HEAD
-char *call_back(char *str, int i, unsigned int  res)
-=======
 /**
  * call_back - call back the numbers of characters
  * @str: string of a character
@@ -182,47 +121,16 @@ char *call_back(char *str, int i, unsigned int  res)
  * @res: the contraction of all results of charater
  * Return: return all character in string
  */
-char *call_back(char *str, int i, int res)
->>>>>>> c47326837d6ebcb3e47b25671f599e158e9591d5
+char *call_back(char *str, int i, unsigned int res)
 {
 	if (res == 0)
 	{
 		str[i] = '\0';
 		return (str);
 	}
-	if (res == 10)
+	if (res >= 10 && res  < 16)
 	{
-		str[i] = 'a';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	if (res == 11)
-	{
-		str[i] = 'b';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	if (res == 12)
-	{
-		str[i] = 'c';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	if (res == 13)
-	{
-		str[i] = 'd';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	if (res == 14)
-	{
-		str[i] = 'e';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	if (res == 15)
-	{
-		str[i] = 'f';
+		str[i] = 'a' + (res - 10);
 		str[i + 1] = '\0';
 		return (str);
 	}

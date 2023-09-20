@@ -128,6 +128,6 @@ int get_hex_oct(int count, char ch, unsigned int var)
 		count = count + write_hex(var, 'x');
 		return (count);
 	}
-	count = count + write_oct(var);
+	count = count + write_oct(var, 0);
 	return (count);
 }
