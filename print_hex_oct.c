@@ -89,6 +89,7 @@ int _str_len(char *str)
 /**
  * write_oct - write the function numbers with arguments and with retun value
  * @num: integer variable
+ * @count: return the numbers of function
  * Return: integer
  */
 int write_oct(unsigned int num, int count)
