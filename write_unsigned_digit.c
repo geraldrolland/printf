@@ -2,7 +2,7 @@
 #include <limits.h>
 #include "main.h"
 /**
- * write_digit - write all characters in digits
+ * write_unsigned_digit - write all characters in digits
  * @num: the numbers of all the characters in string
  * Return: all written digits
  */
@@ -34,7 +34,7 @@ void write_unsigned_digit(unsigned int num)
 	}
 }
 /**
- * insert_digit - insert all digits in the string of characters
+ * insert_unsigned_digit - insert all digits in the string of characters
  * @num: the parameter of the characters
  * @str: string of the characters
  * @i: index at which to insert digits
@@ -60,7 +60,7 @@ char *insert_unsigned_digit(unsigned int num, char *str, int i)
 	return (str);
 }
 /**
- * count_digit - the numbers of digits to be counted in the character
+ * count_unsigned_digit - the numbers of digits to be counted in the character
  * @num: the parameter of the integer
  * @count: the number of occurence of an element in a given range
  * Return: the numbers of  integer
