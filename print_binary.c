@@ -1,7 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
-#include <stdio.h>
 #include "main.h"
 /**
  * write_binary - create binary numbers to the output
