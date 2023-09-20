@@ -1,24 +1,20 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
 /**
  * write_binary - create binary numbers to the output
  * @num: the parameter of the integer
  * Return: integer
  */
-int write_binary(int num)
+int write_binary(unsigned int num)
 {
 	char *ret;
 	int i;
 	int size;
 	char ch;
 	char *str = malloc(400);
-
-	if (num < 0)
-	{
-		write(1, "b", 1);
-		return (-1);
-	}
 	if (str == NULL)
 	{
 		return (0);
@@ -42,7 +38,7 @@ int write_binary(int num)
  * @i: iterator
  * Return: return ptr
  */
-char *print_binary(int num, char *ptr, int i)
+char *print_binary(unsigned int num, char *ptr, int i)
 {
 	int remainder, res;
 

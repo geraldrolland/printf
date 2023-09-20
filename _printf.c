@@ -13,8 +13,9 @@ int _printf(const char *format, ...)
 	va_list list;
 	char ch, var;
 	const char *string;
-	int format_len = 0, int_num, bin;
+	int format_len = 0, int_num;
 	unsigned int pass;
+	unsigned int u, bin;
 
 	va_start(list, format);
 	while (format != NULL && *format != '\0')
@@ -36,7 +37,7 @@ int _printf(const char *format, ...)
 				write(1, &ch, 1);
 				format_len++;
 			}
-			else if (*format == 'd' || *format == 'i' || *format == 'u')
+			else if (*format == 'd' || *format == 'i')
 			{
 				int_num = va_arg(list, int);
 				format_len += count_digit(int_num, 0);
@@ -49,19 +50,27 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'u')
 			{
-				int_num = va_arg(list, int);
-				format_len += count_digit(int_num, 0);
-				write_digit(int_num);
+				u = va_arg(list, unsigned int);
+				format_len += count_unsigned_digit(u, 0);
+				write_unsigned_digit(u);
 			}
 			else if (*format == 'b')
 			{
-				bin = va_arg(list, int);
+				bin = va_arg(list, unsigned int);
 				format_len += write_binary(bin);
 			}
 			else if (*format == 'o' || *format == 'x' || *format == 'X')
 			{
 				pass = va_arg(list, unsigned int);
 				format_len += get_hex_oct(format_len, *format, pass);
+			}
+			else
+			{
+				ch = *format;
+				write(1, &ch, 1);
+				format++;
+				format_len++;
+				continue;
 			}
 		}
 		else

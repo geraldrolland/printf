@@ -1,8 +1,8 @@
 #include <unistd.h>
 #include <stdlib.h>
+#include <limits.h>
 #include "main.h"
-char *call_back(char *str, int i, int res);
-
+char *call_back(char *str, int i, unsigned int res);
 int write_hex(unsigned int num, char var)
 {
 	char *str = malloc(3000);
@@ -37,9 +37,9 @@ int write_hex(unsigned int num, char var)
 	free(ptr);
 	return (len);
 }
-char *insert_hex(int num, char *str, int i)
+char *insert_hex(unsigned int num, char *str, int i)
 {
-	int remainder, res;
+	unsigned int remainder, res;
 
 	remainder = num % 16;
 	res = num - remainder;
@@ -113,7 +113,7 @@ int write_oct(unsigned int num)
 }
 char *insert_oct(unsigned int num, char *str, int i)
 {
-	int remainder, res;
+	unsigned int remainder, res;
 
 	remainder = num % 8;
 	res = num - remainder;
@@ -124,11 +124,10 @@ char *insert_oct(unsigned int num, char *str, int i)
 	{
 		return (insert_oct(res, str, i));
 	}
-	/*str[i] = res + '0';*/
 	str[i] = '\0';
 	return (str);
 }
-char *call_back(char *str, int i, int res)
+char *call_back(char *str, int i, unsigned int  res)
 {
 	if (res == 0)
 	{
