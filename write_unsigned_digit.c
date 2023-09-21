@@ -1,5 +1,4 @@
 #include <unistd.h>
-#include <limits.h>
 #include "main.h"
 /**
  * write_unsigned_digit - write all characters in digits

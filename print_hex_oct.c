@@ -1,6 +1,5 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include <limits.h>
 #include "main.h"
 /**
  * write_hex - a hexadecimal number is represented by preceding number
