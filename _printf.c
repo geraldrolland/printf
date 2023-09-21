@@ -27,7 +27,7 @@ int _printf(const char *format, ...)
 			{
 				string = va_arg(list, const char *);
 				if (string == NULL)
-					string = "(nil)";
+					string = "(null)";
 				write_out(string);
 				format_len += _strlen(string);
 			}
@@ -69,7 +69,6 @@ int _printf(const char *format, ...)
 				ch = *format;
 				write(1, "%", 1);
 				write(1, &ch, 1);
-				format++;
 				format_len += 2;
 			}
 		}
