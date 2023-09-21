@@ -67,10 +67,10 @@ int _printf(const char *format, ...)
 			else
 			{
 				ch = *format;
+				write(1, "%", 1);
 				write(1, &ch, 1);
 				format++;
-				format_len++;
-				continue;
+				format_len += 2;
 			}
 		}
 		else
