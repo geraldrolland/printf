@@ -1,8 +1,6 @@
 #include <unistd.h>
 #include <stdlib.h>
-#include <unistd.h>
-#include <limits.h>
-#include <stdio.h>
+#include "main.h"
 /**
  * write_unsigned_digit - the character write unsigned digit
  * @num: number of digits
@@ -53,11 +51,6 @@ int count_unsigned_digit(unsigned int num)
 {
 	int len = 0;
 
-if (num < 0)
-{
-	len = 1;
-	num = -num;
-}
 do {
 	len++;
 	num = num / 10;

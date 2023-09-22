@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'u')
 			{
 				u = va_arg(list, unsigned int);
-				format_len += count_unsigned_digit(u, 0);
+				format_len += count_unsigned_digit(u);
 				write_unsigned_digit(u);
 			}
 			else if (*format == 'b')
