@@ -9,13 +9,12 @@ char *insert_unsigned_digit(unsigned int num, char *str, int i);
 char *insert_digit( int num, char *str, int i);
 void write_digit(int num);
 void write_unsigned_digit(unsigned int num);
-int count_unsigned_digit(unsigned int num, int count);
+int count_unsigned_digit(unsigned int num);
 int count_digit(int num);
 void write_digit(int num);
 int write_hex(unsigned int num, char ch);
 int _str_len(char *str);
 int write_oct(unsigned int num, int count);
-char *insert_oct(unsigned int num, char *str, int i);
 char *insert_hex(unsigned int num, char *str, int i);
 char *call_back(char *str, int i, unsigned int res);
 #endif
