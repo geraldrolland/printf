@@ -3,7 +3,7 @@
 #include "main.h"
 void write_digit(int num)
 {
-	char num_string[80];
+	char *num_string = malloc(80);
 	char *ptr = insert_digit(num, num_string, 0);
 
 	write(1, ptr, _str_len(ptr));
