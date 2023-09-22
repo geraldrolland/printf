@@ -9,7 +9,7 @@
  */
 int write_hex(unsigned int num, char var)
 {
-	char *str = malloc(3000);
+	char *str = malloc(100);
 	char *ptr = insert_hex(num, str, 0);
 	int size = _str_len(ptr);
 	int len = size;
@@ -69,22 +69,6 @@ char *insert_hex(unsigned int num, char *str, int i)
 	}
 		return (call_back(str, i, res));
 	}
-}
-/**
- * _str_len - identify all string in the lenght of the character
- * @str: string of all character
- * Return: all character
- */
-int _str_len(char *str)
-{
-	int i;
-	int size = 0;
-
-	for (i = 0; str[i] != '\0'; i++)
-{
-	size++;
-}
-return (size);
 }
 /**
  * write_oct - write the function numbers with arguments and with retun value

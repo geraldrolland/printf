@@ -15,7 +15,6 @@ void write_digit(int num);
 int write_hex(unsigned int num, char ch);
 int _str_len(char *str);
 int write_oct(unsigned int num, int count);
-char *insert_oct(unsigned int num, char *str, int i);
 char *insert_hex(unsigned int num, char *str, int i);
 char *call_back(char *str, int i, unsigned int res);
 #endif
