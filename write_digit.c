@@ -25,31 +25,40 @@ char *insert_digit(int num, char *str, int i)
 	int remainder, j, temp;
 
 	if (num < 0)
-	{
-		str[i] = '-';
-		num = num / (-1);
-		i = 1;
-	}
-	if (num == 0)
-	{
-		str[i] = '0';
-		str[i + 1] = '\0';
-		return (str);
-	}
-	temp = count_digit(num);
-	str[temp] = '\0';
-	temp--;
-	for (j = temp; j >= 1; j--)
-	{
-		remainder = num % 10;
-		if (remainder < 0)
-		{
-			remainder = remainder * (-1);
-		}
-		str[j] = remainder + '0';
-		num /= 10;
-	}
+{
+	str[i] = '-';
+	i = 1;
+}
+if (num == 0)
+{
+	str[i] = '0';
+	str[i + 1] = '\0';
 	return (str);
+}
+temp = count_digit(num);
+str[temp] = '\0';
+temp--;
+if (num < 0)
+{
+	for (j = temp; j >= 1; j--)
+{
+	remainder = num % 10;
+	if (remainder < 0)
+{
+		remainder = remainder * (-1);
+}
+str[j] = remainder + '0';
+num /= 10;
+}
+return (str);
+}
+for (j = temp; j >= 0; j--)
+{
+	remainder = num % 10;
+	str[j] = remainder + '0';
+	num /= 10;
+}
+return (str);
 }
 /**
  * count_digit - count the digit in character
