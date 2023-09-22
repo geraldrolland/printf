@@ -62,11 +62,17 @@ char *insert_hex(unsigned int num, char *str, int i)
 		str[i] = 'a' + (remainder - 10);
 		i++;
 	}
+		if (remainder < 10)
+	{
+		str[i] = remainder + '0';
+		i++;
+	}
 		if (res > 16)
 	{
 		num = res;
 		continue;
 	}
+
 		return (call_back(str, i, res));
 	}
 }
