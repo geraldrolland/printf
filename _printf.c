@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 			else if (*format == 'd' || *format == 'i')
 			{
 				int_num = va_arg(list, int);
-				format_len += count_digit(int_num, 0);
+				format_len += count_digit(int_num);
 				write_digit(int_num);
 			}
 			else if (*format == '%')
