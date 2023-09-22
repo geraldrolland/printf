@@ -80,3 +80,19 @@ int count_digit(int num)
 	} while (num != 0);
 	return (len);
 }
+/**
+ * _str_len - identify the string length of each character
+ * @str: the string of the character
+ * Return: the string of the character
+ */
+int _str_len(char *str)
+{
+	int i;
+	int size = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+		size++;
+	}
+	return (size);
+}

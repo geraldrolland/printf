@@ -52,27 +52,28 @@ char *insert_hex(unsigned int num, char *str, int i)
 {
 	unsigned int remainder, res;
 
-	remainder = num % 16;
-	res = num - remainder;
-	res = res / 16;
-	if (remainder >= 10 && remainder < 16)
+	while (1 > 0)
+	{
+		remainder = num % 16;
+		res = num - remainder;
+		res = res / 16;
+		if (remainder >= 10 && remainder < 16)
 	{
 		str[i] = 'a' + (remainder - 10);
 		i++;
 	}
-	if (remainder < 10)
+		if (res > 16)
 	{
-		str[i] = remainder + '0';
-		i++;
+		num = res;
+		continue;
 	}
-	if (res < 16)
 		return (call_back(str, i, res));
-	return (insert_hex(res, str, i));
+	}
 }
 /**
- * _str_len - takes a string as an argument and return its length
+ * _str_len - identify all string in the lenght of the character
  * @str: string of all character
- * Return: return all strings
+ * Return: all character
  */
 int _str_len(char *str)
 {
@@ -80,10 +81,10 @@ int _str_len(char *str)
 	int size = 0;
 
 	for (i = 0; str[i] != '\0'; i++)
-	{
-		size++;
-	}
-	return (size);
+{
+	size++;
+}
+return (size);
 }
 /**
  * write_oct - write the function numbers with arguments and with retun value
