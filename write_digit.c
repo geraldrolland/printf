@@ -1,6 +1,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "main.h"
+/**
+ * write_digit - write digits in the string of each character
+ * @num: number of digits in string
+ * Return: all character
+ */
 void write_digit(int num)
 {
 	char num_string[80];
@@ -8,6 +13,13 @@ void write_digit(int num)
 
 	write(1, ptr, _str_len(ptr));
 }
+/**
+ * insert_digit - insert digits in character
+ * @num: number of character in string
+ * @str: strings in each character
+ * @i: interator
+ * Return: all inserted digit in character
+ */
 char *insert_digit(int num, char *str, int i)
 {
 	int remainder, j, temp;
@@ -39,6 +51,11 @@ char *insert_digit(int num, char *str, int i)
 	}
 	return (str);
 }
+/**
+ * count_digit - count the digit in character
+ * @num: number of digit in character
+ * Return: all the counted digit
+ */
 int count_digit(int num)
 {
 	int len = 0;
